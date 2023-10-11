@@ -3,7 +3,9 @@ import 'package:flutter_sliver_app/appbar/first_appbar.dart';
 import 'package:flutter_sliver_app/appbar/fourth_appbar.dart';
 import 'package:flutter_sliver_app/appbar/second_appbar.dart';
 import 'package:flutter_sliver_app/appbar/third_appbar.dart';
+import 'package:flutter_sliver_app/components/appbar.dart';
 import 'package:flutter_sliver_app/components/content_and_map.dart';
+import 'package:flutter_sliver_app/components/main_image.dart';
 import 'package:flutter_sliver_app/components/user_bar.dart';
 
 void main() {
@@ -28,15 +30,52 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          AspectRatio(
-              aspectRatio: 5 / 4,
-              child: Image.network("http://picsum.photos/500/400")),
-          UserBar("우하", "칠원읍", 41.7),
-          ContentAndMap(),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0.0,
+            leading: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+              style: IconButton.styleFrom(
+                minimumSize: Size(24, 24),
+              ),
+            ),
+            actions: [
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.ios_share, color: Colors.black)),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.more_vert, color: Colors.black)),
+            ],
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(),
+          ),
         ],
       ),
     );
   }
+}
+
+AppBar _buildAppBar() {
+  return AppBar(
+    backgroundColor: Colors.transparent,
+    elevation: 0.0,
+    leading: IconButton(
+      onPressed: () {},
+      icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+      style: IconButton.styleFrom(
+        minimumSize: Size(24, 24),
+      ),
+    ),
+    actions: [
+      IconButton(
+          onPressed: () {}, icon: Icon(Icons.ios_share, color: Colors.black)),
+      IconButton(
+          onPressed: () {}, icon: Icon(Icons.more_vert, color: Colors.black)),
+    ],
+  );
 }

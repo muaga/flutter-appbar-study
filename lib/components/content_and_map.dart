@@ -8,7 +8,7 @@ class ContentAndMap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(right: 16.0, left: 16.0, bottom: 16.0),
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
           border:
               Border(bottom: BorderSide(style: BorderStyle.solid, width: 0.1))),
@@ -115,24 +115,4 @@ class ContentAndMap extends StatelessWidget {
       ),
     );
   }
-}
-
-AppBar _buildAppBar() {
-  return AppBar(
-    backgroundColor: Colors.transparent,
-    elevation: 0.0,
-    leading: IconButton(
-      onPressed: () {},
-      icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-      style: IconButton.styleFrom(
-        minimumSize: Size(24, 24),
-      ),
-    ),
-    actions: [
-      IconButton(
-          onPressed: () {}, icon: Icon(Icons.ios_share, color: Colors.black)),
-      IconButton(
-          onPressed: () {}, icon: Icon(Icons.more_vert, color: Colors.black)),
-    ],
-  );
 }
